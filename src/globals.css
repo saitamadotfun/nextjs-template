@@ -1,0 +1,9 @@
+@import "saitamadotfun/bunshi/index.css";
+
+@unocss preflights;
+@unocss default;
+@unocss;
+
+:root {
+  @apply !outline-none;
+}

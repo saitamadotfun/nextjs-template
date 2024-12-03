@@ -2,6 +2,9 @@
   "HomePage": {
     "Example": {
       "name": "saitama"
+    },
+    "Config": {
+      "theme": {}
     }
   }
 }

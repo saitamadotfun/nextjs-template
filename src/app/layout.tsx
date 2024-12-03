@@ -4,21 +4,16 @@ import "@unocss/reset/tailwind.css";
 import clsx from "clsx";
 import { Api } from "saitamadotfun/sdk";
 
+import type { Metadata } from "next";
 import { Open_Sans } from "next/font/google";
-import type { Metadata, ResolvingMetadata } from "next";
+
+import props from "../../.saitama/saitama.json";
 
 import "@/globals.css";
+import { Config } from "@/components/Config";
 import { saitamaApiKey, saitamaBaseApiUrl, siteId } from "@/config";
 
-type Props = {
-  params: Promise<{ id: string }>;
-  searchParams: Promise<{ [key: string]: string | undefined }>;
-};
-
-export async function generateMetadata(
-  {}: Props,
-  parent: ResolvingMetadata
-): Promise<Metadata> {
+export async function generateMetadata(): Promise<Metadata> {
   const api = new Api(saitamaBaseApiUrl, saitamaApiKey);
   const site = await api.site
     .retrieve(siteId)
@@ -55,6 +50,7 @@ export default function RootLayout({
         )}
       >
         {children}
+        <Config {...props.HomePage.Config} />
       </body>
     </html>
   );

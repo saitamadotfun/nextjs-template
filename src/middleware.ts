@@ -4,6 +4,8 @@ import { type NextRequest, NextResponse } from "next/server";
 import { saitamaApiKey } from "@/config";
 
 export async function middleware(request: NextRequest) {
+  if (process.env.NODE_ENV === "development") return;
+
   const secret = new Secret(saitamaApiKey);
   const token = request.nextUrl.searchParams.get("auth.token");
 

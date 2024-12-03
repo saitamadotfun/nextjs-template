@@ -1,3 +1,4 @@
+"use client";
 import { block } from "saitamadotfun/bunshi";
 
 export const Example = block(
@@ -7,6 +8,7 @@ export const Example = block(
     </section>
   ),
   {
+    title: "Example",
     argsType: {
       name: {
         control: "input",

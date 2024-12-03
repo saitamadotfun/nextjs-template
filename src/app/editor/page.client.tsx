@@ -1,3 +1,5 @@
+"use client";
+
 import { useCookies } from "react-cookie";
 import { Api, Asset } from "saitamadotfun/sdk";
 import { Editor, toPlainObject } from "saitamadotfun/bunshi";

@@ -31,6 +31,7 @@ export default defineConfig({
     utilities: 1,
   },
   presets: [presetUno(), presetIcons()],
+  theme: { colors: {} },
   safelist: [
     "i-fa-brands:twitter",
     "i-fa-brands:instagram",
@@ -64,9 +65,9 @@ export default defineConfig({
               : expandVariantGroup(match[2].trim());
 
           const start = match.index!;
-          const include = [];
+          const include: string[] = [];
 
-          let className;
+          let className: string;
 
           switch (deviceVariant) {
             case "phone":

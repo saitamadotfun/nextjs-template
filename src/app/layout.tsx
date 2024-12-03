@@ -7,10 +7,7 @@ import { Api } from "saitamadotfun/sdk";
 import type { Metadata } from "next";
 import { Open_Sans } from "next/font/google";
 
-import props from "../../.saitama/saitama.json";
-
 import "@/globals.css";
-import { Config } from "@/components/Config";
 import { saitamaApiKey, saitamaBaseApiUrl, siteId } from "@/config";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -50,7 +47,6 @@ export default function RootLayout({
         )}
       >
         {children}
-        <Config {...props.HomePage.Config} />
       </body>
     </html>
   );
